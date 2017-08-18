@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} Registration for {{title}}{% endblock %}
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% block page_content %}{% endblock %}
+</div>
+    <h1>{{school}} registration</h1>
+      <h2>Class registration</h2>
+				<form action="" method="post" name="Inputs">
+        {{ form.csrf_token }}
+    		{{form.hidden_tag()}}
+    		<p>Science: {{form.science_choices()}} </p>
+    		<p>Math: {{form.math_choices()}}    </p>
+    		<p>English: {{form.english_choices()}} </p>
+    		<p>History: {{form.history_choices()}} </p>
+    		<p>Elective: {{form.elective_choices()}} </p>
+				<p> {{form.submit}} </p>
+			</form>
+{% endblock %}
