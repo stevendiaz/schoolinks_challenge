@@ -1,6 +1,11 @@
 # schoolinks
 
 ## Project Installation
+#### 0. Clone repo
+
+```
+git clone https://github.com/stevendiaz/schoolinks_challenge.git
+```
 #### 1. Install virtualenv
 
 ```
