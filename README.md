@@ -27,6 +27,12 @@ $(env) python run.py
 ```
 ### 5. Navigate to `localhost:5000/register/texas`
 
+### 6. Tests
+
+```
+$(env) python test_application.py
+```
+
 ## Design 
 
 With flask, it is possible to fit this application into one file. I made the project structure as if it were a full-fledged application to reflect the organization of the files. Within our `app/` directory we have our application initialization. At this level we also have our `models.py`. 
