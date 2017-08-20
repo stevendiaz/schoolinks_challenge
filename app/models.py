@@ -1,3 +1,5 @@
+# This is an in-memory representation of what a noSQL datastore
+# would look like for this application
 db = {
         'texas': {
 			'classes': {
@@ -35,4 +37,18 @@ class Student:
 		else:
 			db.get(school)['students'].append(self)
 
-		
+class ClassTimes:
+
+    def __init__(self, args):
+        self.science = self._time(args.get('science'))
+        self.math = self._time(args.get('math'))
+        self.electives = self._time(args.get('electives'))
+        self.english = self._time(args.get('english'))
+        self.history = self._time(args.get('history'))
+
+    def _time(self, hour):
+        hour = int(hour)
+        if hour > 12:
+            return str(hour % 12) + 'PM'
+        else:
+            return str(hour) + 'AM'

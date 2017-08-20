@@ -52,5 +52,8 @@ Our `MasterSchedule` model is designed to take in a school name and return a mas
 
 Our `Student` model is very simple. It is an instance of a schedule. The student has 5 instances of classes represented by a single time.
 
+Our `ClassTimes` model is a layer that takes in our string arguments that represent the hour, with valid hours of 1-24, and converts it to
+human readable format.
+
 ## Stubbed Database
 Since this is a "mini-application", the database is stubbed. All the database transactions are abstracted away, however. If I were to set up a database, all of the transaction logic would lie in the `models.py` file. Currently, the `models.py` file uses a dictionary as a pseudo-datastore. For this type of use case, I would use a noSQL database for quick iteration and quick set up. 

@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, abort, flash, request,\
     current_app, make_response, jsonify
 from .forms import SchoolForm
-from ..models import MasterSchedule, Student
+from ..models import MasterSchedule, Student, ClassTimes
 from . import main
 
 @main.route('/register/<school>', methods=['GET', 'POST'])
@@ -19,11 +19,6 @@ def register_form(school):
 
 @main.route('/landing/<school>', methods=['GET'])
 def register_classes(school):
-	student = Student(request.args, school)
-	science = request.args.get('science')
-	math = request.args.get('math')
-	history = request.args.get('history')
-	elective = request.args.get('electives')
-	english = request.args.get('english')
-	return render_template('landing.html', school=school,  science=science, math=math, english=english, elective=elective, history=history) 
-
+    student = Student(request.args, school)
+    class_times = ClassTimes(request.args)
+    return render_template('landing.html', school=school, class_times=class_times)
